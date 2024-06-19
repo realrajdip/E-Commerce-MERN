@@ -1,54 +1,98 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header') %> 
+<% if(error.length > 0) { %>
+<div
+  style="
+    position: absolute; 
+    top: 2%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    padding: 1rem; 
+    background-color: #f56565;"
+>
+  <span style="color: white;"> <%= error %> </span>
+</div>
+<% } %>
 
 <div class="flex flex-col md:flex-row w-full min-h-screen">
-    <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20 bg-gray-100">
-        <div class="w-full max-w-md">
-            <h3 class="text-4xl font-semibold text-center md:text-left">Welcome to <span class="text-blue-500">Scatch</span></h3>
-            <h4 class="text-2xl text-center md:text-left mb-6">Create your account</h4>
-            <form autocomplete="off" action="/users/register" method="post">
-                <div class="mb-4">
-                    <input
-                        class="bg-white block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
-                        type="text" placeholder="Full Name" name="fullname">
-                </div>
-                <div class="mb-4">
-                    <input
-                        class="bg-white block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
-                        type="email" placeholder="Email" name="email">
-                </div>
-                <div class="mb-4">
-                    <input
-                        class="bg-white block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
-                        type="password" placeholder="Password" name="password">
-                </div>
-                <div>
-                    <input class="w-full py-3 rounded-full bg-blue-500 text-white font-semibold cursor-pointer hover:bg-blue-600 transition"
-                        type="submit" value="Create My Account">
-                </div>
-            </form>
+  <div
+    class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20 bg-gray-100"
+  >
+    <div class="w-full max-w-md">
+      <h3 class="text-4xl font-semibold text-center md:text-left">
+        Welcome to <span class="text-blue-500">Scatch</span>
+      </h3>
+      <h4 class="text-2xl text-center md:text-left mb-6">
+        Create your account
+      </h4>
+      <form autocomplete="off" action="/users/register" method="post">
+        <div class="mb-4">
+          <input
+            class="bg-white block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            type="text"
+            placeholder="Full Name"
+            name="fullname"
+          />
         </div>
-    </div>
-    <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20 bg-white">
-        <div class="w-full max-w-md">
-            <h4 class="text-2xl font-semibold text-center md:text-left mb-6">Login to your account</h4>
-            <form autocomplete="off" action="/users/login" method="post">
-                <div class="mb-4">
-                    <input
-                        class="bg-gray-100 block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
-                        type="email" placeholder="Email" name="email">
-                </div>
-                <div class="mb-4">
-                    <input
-                        class="bg-gray-100 block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
-                        type="password" placeholder="Password" name="password">
-                </div>
-                <div>
-                    <input class="w-full py-3 rounded-full bg-blue-500 text-white font-semibold cursor-pointer hover:bg-blue-600 transition"
-                        type="submit" value="Login">
-                </div>
-            </form>
+        <div class="mb-4">
+          <input
+            class="bg-white block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            type="email"
+            placeholder="Email"
+            name="email"
+          />
         </div>
+        <div class="mb-4">
+          <input
+            class="bg-white block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            type="password"
+            placeholder="Password"
+            name="password"
+          />
+        </div>
+        <div>
+          <input
+            class="w-full py-3 rounded-full bg-blue-500 text-white font-semibold cursor-pointer hover:bg-blue-600 transition"
+            type="submit"
+            value="Create My Account"
+          />
+        </div>
+      </form>
     </div>
+  </div>
+  <div
+    class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20 bg-white"
+  >
+    <div class="w-full max-w-md">
+      <h4 class="text-2xl font-semibold text-center md:text-left mb-6">
+        Login to your account
+      </h4>
+      <form autocomplete="off" action="/users/login" method="post">
+        <div class="mb-4">
+          <input
+            class="bg-gray-100 block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            type="email"
+            placeholder="Email"
+            name="email"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="bg-gray-100 block w-full px-4 py-3 border-2 rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            type="password"
+            placeholder="Password"
+            name="password"
+          />
+        </div>
+        <div>
+          <input
+            class="w-full py-3 rounded-full bg-blue-500 text-white font-semibold cursor-pointer hover:bg-blue-600 transition"
+            type="submit"
+            value="Login"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <%- include('./partials/footer') %>
