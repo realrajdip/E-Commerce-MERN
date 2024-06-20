@@ -7,10 +7,10 @@ const productSchema = new mongoose.Schema({
   price: String,
   discount: {
     type: Number, 
-    default: 0
+    default: 0,
   }, 
   bgcolor: String, 
   textcolor: String
 });
 
-module.exports = mongoose.model('user', productSchema); 
+module.exports = mongoose.model('product', productSchema); 
