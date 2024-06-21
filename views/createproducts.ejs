@@ -1,4 +1,18 @@
-<%- include('./partials/header') %>
+<%- include('./partials/header') %> <% if(success.length > 0) { %>
+<div
+  style="
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background-color: #11d642;
+    border-radius: 0.32rem;
+  "
+>
+  <span style="color: white"> <%= success %> </span>
+</div>
+<% } %>
 
 <div class="min-h-screen flex flex-col bg-gray-100">
   <div
@@ -41,7 +55,7 @@
             <div class="relative">
               <input
                 name="image"
-                type="file" 
+                type="file"
                 required
                 class="absolute inset-0 opacity-0 cursor-pointer z-50"
               />
@@ -106,7 +120,7 @@
               >
               <input
                 name="bgcolor"
-                type="text" 
+                type="text"
                 required
                 placeholder="Background Color"
                 class="w-full py-2 md:py-3 px-3 md:px-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"

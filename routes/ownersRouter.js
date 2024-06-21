@@ -8,7 +8,8 @@ router.post('/create', async (req, res) => {
 }
 
 router.get('/admin', (req, res) => {
-    res.render("createProducts")
+    let success = req.flash("success"); 
+    res.render("createProducts", {success});
 })
 
 module.exports = router; 
